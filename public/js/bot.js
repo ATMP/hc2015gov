@@ -1,11 +1,12 @@
 function question(){
-        $.ajax({
-           url:"/api/v1/question",
-          type: 'GET',
-          data: { question : $('#question').val()},
-          contentType: 'application/json; charset=utf-8',
-          success:function(result){$("#answer").html(result)}
-          })
+        return $.ajax({
+            url:"/api/v1/question",
+            type: 'GET',
+            data: { question : $('#question').val()},
+            contentType: 'application/json; charset=utf-8',
+            success:function(result){$("#answer").html(result)}
+        })
+          
         // console.log($('#question').val())
       }
 
@@ -22,14 +23,17 @@ $(document).ready(function(){
   $("#question").keypress(
     function(e){
       if(e.which == 13 && $('#question').val() != ""){
-          question();
-          // $('#answer').val($('#question').val());
+        $.when(question()).done(function(){
           $('#question').val('');
           if($('#answer').prop("scrollHeight") != 0){
             $('#answer').height('0px').height($('#answer').prop("scrollHeight") + 'px');
           }
           $('#answer').show();
+        })
+          // question();
+          // $('#answer').val($('#question').val());
+          
       }
     }
-    )
+  )
 });
