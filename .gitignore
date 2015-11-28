@@ -1,2 +1,4 @@
-.bundle/
+.bundle/*
 db/*.db
+*.DS_Store
+
