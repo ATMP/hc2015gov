@@ -22,8 +22,9 @@ jQuery(function($) {
 		event.preventDefault();
 		var target = $(this).find('>a').prop('hash');
 		$('html, body').animate({
-			scrollTop: $(target).offset().top
+			scrollTop: $(target).offset().top-71
 		}, 500);
+		
 	});
 
 	//scrollspy
