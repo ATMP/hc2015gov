@@ -20,7 +20,7 @@ class ApplicationController < Sinatra::Base
   app_get_root = lambda do
     redirect '/index.html'   
   end
-
+  
   # Web App Views Routes
   get '/', &app_get_root
  
