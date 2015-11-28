@@ -13,13 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20151128030954) do
 
-  create_table "qa", force: :cascade do |t|
-    t.string   "question"
-    t.string   "answer"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "qas", force: :cascade do |t|
     t.string   "question"
     t.string   "answer"
