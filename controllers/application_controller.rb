@@ -5,19 +5,8 @@ require 'slim'
 # Simple web service to delver codebadges functionality
 class ApplicationController < Sinatra::Base
   enable :sessions
-  register Sinatra::Flash
-  use Rack::MethodOverride
-
   set :views, File.expand_path('../../views', __FILE__)
   set :public_folder, File.expand_path('../../public', __FILE__)
-
-  configure :development do
-    set :api_server, 'http://localhost:9292'
-  end
-
-  configure :production do
-    set :api_server, 'http://hc2015gov.herokuapp.com'
-  end
 
   configure :production, :development do
     enable :logging
@@ -29,7 +18,7 @@ class ApplicationController < Sinatra::Base
   
 ###############################################
   app_get_root = lambda do
-    slim :home
+    redirect '/index.html' 
   end
 
   # Web App Views Routes
