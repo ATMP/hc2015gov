@@ -23,16 +23,11 @@ class ApplicationController < Sinatra::Base
     enable :logging
   end
 
-  helpers do
-    def current_page?(path = ' ')
-      path_info = request.path_info
-      path_info += ' ' if path_info == '/'
-      request_path = path_info.split '/'
-      request_path[1] == path
-    end
+  get "/api/v1/question" do
+    params['question']
   end
-
-
+  
+###############################################
   app_get_root = lambda do
     slim :home
   end

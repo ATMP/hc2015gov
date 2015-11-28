@@ -3,6 +3,8 @@ html
   head
     title hc2015gov
     link rel='stylesheet' type='text/css' href='/style.css' media='screen projection'
+    script type='text/javascript' src='http://code.jquery.com/jquery-2.1.0.min.js'
+    script type='text/javascript' src='/bot.js'
   body
     header
       == slim :nav
@@ -10,4 +12,5 @@ html
       == styled_flash
       == yield
     .footer
+      == slim :bot 
       == slim :footer

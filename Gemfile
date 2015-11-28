@@ -2,8 +2,9 @@ source 'http://rubygems.org'
 ruby '2.2.3'
 
 gem 'sinatra'
-gem 'puma'
 gem 'sinatra-flash'
+gem 'sinatra-activerecord'
+gem 'puma'
 gem 'slim'
 gem 'tilt'
 
