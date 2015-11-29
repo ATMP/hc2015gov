@@ -13,11 +13,18 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/api/v1/question" do
-    params['question']
+    q = params['question']
+    `cd python; python qa_local.py #{q} seg_qa.json out`
+    result = open('python/out').read
+    logger.info q
+    logger.info result
+    result
+    
   end
   
 ###############################################
   app_get_root = lambda do
+    logger.info `ls`
     redirect '/index.html'   
   end
   

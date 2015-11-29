@@ -23,6 +23,8 @@ $(document).ready(function(){
   $("#question").keypress(
     function(e){
       if(e.which == 13 && $('#question').val() != ""){
+        // $('#answer').val('搜尋中...');
+        // $('#answer').show();
         $.when(question()).done(function(){
           $('#question').val('');
           if($('#answer').prop("scrollHeight") != 0){
@@ -30,8 +32,6 @@ $(document).ready(function(){
           }
           $('#answer').show();
         })
-          // question();
-          // $('#answer').val($('#question').val());
           
       }
     }
