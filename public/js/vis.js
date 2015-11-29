@@ -94,7 +94,7 @@ BubbleChart = (function() {
       results1 = [];
       for (l = 0; l <= 24; l++){ results1.push(l); }
       return results1;
-    }).apply(this)).range(["#d84b2a", "#ee9586", "#e4b7b2", "#aaaaaa", "#beccae", "#9caf84", "#7aa25c"]);
+    }).apply(this)).range(["#F0FF57", "#E8AB69", "#FF43B8", "#3A4CE8", "#4DFFB8"]);
     max_amount = d3.max(this.data, function(d) {
       return parseInt(d["總計_Grand Total"]);
     });
