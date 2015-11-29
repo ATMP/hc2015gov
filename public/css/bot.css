@@ -15,7 +15,8 @@ input {
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 #answer {
-  resize:none;
+  /*resize:none;*/
+  width:250;
   display:none;
   border: 5px solid white; 
     -webkit-box-shadow: 
