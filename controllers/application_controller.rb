@@ -14,8 +14,7 @@ class ApplicationController < Sinatra::Base
 
   get "/api/v1/question" do
     q = params['question']
-    `cd python; python qa_local.py #{q} seg_qa.json out`
-    result = open('python/out').read
+    result = `cd python; python qa_local.py #{q} seg_qa.json`
     logger.info q
     logger.info result
     result
