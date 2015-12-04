@@ -4,7 +4,7 @@ import json
 import sys
 import codecs
 
-def bot(query, readfile, writefile):
+def bot(query, readfile):
     def cal_score(words,dic):
         score = 0
         score += sum([ 10 * dic['keyword'].count(w)  for w in words])
@@ -24,9 +24,10 @@ def bot(query, readfile, writefile):
             max_question = ''.join(data['question'])
             max_answer = ''.join(data['answer'])
 
-    f = codecs.open(writefile,'w','utf8')
-    f.write('Q:\n'+max_question+'\nA:\n'+max_answer)
-    f.close()
+    print ('Q:\n'+max_question+'\nA:\n'+max_answer).encode('utf-8')
+    # f = codecs.open(writefile,'w','utf8')
+    # f.write('Q:\n'+max_question+'\nA:\n'+max_answer)
+    # f.close()
     
-bot(sys.argv[1],sys.argv[2],sys.argv[3])
+bot(sys.argv[1],sys.argv[2])
     
