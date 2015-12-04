@@ -1,13 +1,14 @@
-doctype 5
-html
-  head
-    title hc2015gov
-    link rel='stylesheet' type='text/css' href='/style.css' media='screen projection'
-  body
-    header
-      == slim :nav
-    section
-      == styled_flash
-      == yield
-    .footer
-      == slim :footer
+/ doctype 5
+/ html
+/   head
+/     title hc2015gov
+/     script type='text/javascript' src='http://code.jquery.com/jquery-2.1.0.min.js'
+/     script type='text/javascript' src='/js/bot.js'
+/   body
+/     header
+/       == slim :nav
+/     section
+/       == styled_flash
+/       == yield
+/       == slim :bot 
+/       == slim :footer
